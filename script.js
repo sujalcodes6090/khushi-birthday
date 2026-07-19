@@ -70,23 +70,29 @@ function createHearts(){
 }
 function createFireworks() {
 
-    for (let i = 0; i < 25; i++) {
+    const duration = 3000;
+    const end = Date.now() + duration;
 
-        const firework = document.createElement("div");
+    (function frame() {
 
-        firework.className = "firework";
+        confetti({
+            particleCount: 8,
+            angle: 60,
+            spread: 80,
+            origin: { x: 0 }
+        });
 
-        firework.style.left = Math.random() * 100 + "vw";
-        firework.style.top = Math.random() * 70 + "vh";
+        confetti({
+            particleCount: 8,
+            angle: 120,
+            spread: 80,
+            origin: { x: 1 }
+        });
 
-        firework.style.background =
-            `hsl(${Math.random() * 360},100%,60%)`;
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
 
-        document.body.appendChild(firework);
-
-        setTimeout(() => {
-            firework.remove();
-        }, 1200);
-    }
+    })();
 
 }
