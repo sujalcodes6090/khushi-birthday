@@ -37,9 +37,6 @@ btn.addEventListener("click", () => {
 
             createHearts();
             createFireworks();
-            setTimeout(createFireworks, 700);
-setTimeout(createFireworks, 1400);
-setTimeout(createFireworks, 2100);
 
         }
 
@@ -70,29 +67,11 @@ function createHearts(){
 }
 function createFireworks() {
 
-    const duration = 3000;
-    const end = Date.now() + duration;
-
-    (function frame() {
-
-        confetti({
-            particleCount: 8,
-            angle: 60,
-            spread: 80,
-            origin: { x: 0 }
-        });
-
-        confetti({
-            particleCount: 8,
-            angle: 120,
-            spread: 80,
-            origin: { x: 1 }
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-
-    })();
+    confetti({
+        particleCount: 40,
+        spread: 60,
+        startVelocity: 30,
+        origin: { y: 0.7 }
+    });
 
 }
