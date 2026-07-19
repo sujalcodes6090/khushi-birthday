@@ -100,11 +100,13 @@ birthdayVideo.addEventListener("ended", () => {
 
 });
 
-cakeBtn.addEventListener("click", () => {
+birthdayVideo.addEventListener("ended", () => {
 
-    cakeBtn.style.display = "none";
+    alert("Video Ended!");
 
-    cakeSection.style.display = "block";
+    cakeBtn.style.display = "block";
+
+});
 
     cakeSection.scrollIntoView({
         behavior: "smooth"
