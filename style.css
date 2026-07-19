@@ -77,12 +77,6 @@ button:hover{
         opacity:1;
         transform:translateY(0);
     }
-}.gallery{
-    margin-top:40px;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
 }
 
 .gallery img{
@@ -111,11 +105,16 @@ button:hover{
 }
 
 .gallery{
+    margin-top:40px;
     display:none;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
 }
 
 .gallery.show{
     display:flex;
+    animation:fadeIn 1s ease;
 }
 .heart{
     position:fixed;
