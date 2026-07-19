@@ -203,3 +203,69 @@ button:hover{
 #messageBtn{
     margin-top:30px;
 }
+#photoSection{
+    display:none;
+    margin-top:40px;
+}
+
+#finalPhoto{
+    width:90%;
+    max-width:400px;
+    border-radius:25px;
+    border:5px solid white;
+    box-shadow:0 0 30px rgba(255,255,255,.4);
+    transition:.4s;
+}
+
+#finalPhoto:hover{
+    transform:scale(1.05);
+}/* Final Ending Screen */
+
+.end-screen{
+    display:none;
+    margin-top:50px;
+    padding:40px 25px;
+    border-radius:25px;
+    background:rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    animation:fadeIn 1.5s ease;
+}
+
+.end-screen h1{
+    font-size:50px;
+    color:#ff4d6d;
+    margin-bottom:25px;
+    text-shadow:0 0 15px #ff4d6d;
+    animation:glow 2s infinite alternate;
+}
+
+.end-screen p{
+    font-size:22px;
+    color:white;
+    line-height:1.9;
+    white-space:pre-wrap;
+}
+
+.end-screen h2{
+    margin-top:35px;
+    color:#ffd166;
+}
+
+.end-screen h3{
+    color:#ffffff;
+    margin-top:10px;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px #ff4d6d;
+    }
+
+    to{
+        text-shadow:0 0 30px #ff4d6d,
+                    0 0 60px #ff4d6d;
+    }
+
+}

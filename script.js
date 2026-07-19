@@ -9,6 +9,12 @@ const cakeSection = document.getElementById("cakeSection");
 const messageBtn = document.getElementById("messageBtn");
 const messageSection = document.getElementById("messageSection");
 const typewriter = document.getElementById("typewriter");
+const photoBtn = document.getElementById("photoBtn");
+const photoSection = document.getElementById("photoSection");
+const endBtn = document.getElementById("endBtn");
+const endSection = document.getElementById("endSection");
+const endTitle = document.getElementById("endTitle");
+const endText = document.getElementById("endText");
 
 const countdown = document.getElementById("countdown");
 const count = document.getElementById("count");
@@ -149,21 +155,106 @@ messageBtn.addEventListener("click", () => {
 
     function type() {
 
-        if (i < message.length) {
+    if (i < message.length) {
 
-            if (message.charAt(i) === "\n") {
-                typewriter.innerHTML += "<br>";
-            } else {
-                typewriter.innerHTML += message.charAt(i);
-            }
-
-            i++;
-
-            setTimeout(type, 45);
+        if (message.charAt(i) === "\n") {
+            typewriter.innerHTML += "<br>";
+        } else {
+            typewriter.innerHTML += message.charAt(i);
         }
+
+        i++;
+
+        setTimeout(type, 45);
+
+    } else {
+
+        photoBtn.style.display = "inline-block";
 
     }
 
+}
+
     type();
+
+});
+photoBtn.addEventListener("click", () => {
+
+    photoBtn.style.display = "none";
+
+    photoSection.style.display = "block";
+
+    endBtn.style.display = "inline-block";
+
+    photoSection.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+const finalMessage = `One Last Thing... ❤️
+
+Thank you for being such a wonderful person.
+
+May your smile always stay on your face.
+May all your dreams come true.
+Stay happy, stay blessed.
+
+Happy Birthday Khushi 🎂❤️`;
+
+endBtn.addEventListener("click", () => {
+
+    endBtn.style.display = "none";
+
+    endSection.style.display = "block";
+
+    endSection.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    let i = 0;
+    let j = 0;
+
+    const title = "The End ❤️";
+
+    endTitle.innerHTML = "";
+    endText.innerHTML = "";
+
+    function typeTitle() {
+
+        if (i < title.length) {
+
+            endTitle.innerHTML += title.charAt(i);
+            i++;
+
+            setTimeout(typeTitle, 80);
+
+        } else {
+
+            function typeMessage() {
+
+                if (j < finalMessage.length) {
+
+                    if (finalMessage.charAt(j) === "\n") {
+                        endText.innerHTML += "<br>";
+                    } else {
+                        endText.innerHTML += finalMessage.charAt(j);
+                    }
+
+                    j++;
+
+                    setTimeout(typeMessage, 35);
+                }
+            }
+
+            typeMessage();
+        }
+    }
+
+    typeTitle();
+
+    confetti({
+        particleCount: 150,
+        spread: 100
+    });
 
 });
