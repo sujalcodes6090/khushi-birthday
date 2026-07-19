@@ -2,33 +2,65 @@ const btn = document.getElementById("startBtn");
 const gallery = document.querySelector(".gallery");
 const letter = document.getElementById("letter");
 
+const countdown = document.getElementById("countdown");
+const count = document.getElementById("count");
+
 btn.addEventListener("click", () => {
 
-    // Gallery dikhana
-    gallery.classList.add("show");
-
-    // Letter dikhana
-    letter.classList.add("show");
-
-    // Button hide karna
     btn.style.display = "none";
+    countdown.style.display = "block";
 
-    // Hearts banana
-    for (let i = 0; i < 30; i++) {
+    let number = 3;
 
-        let heart = document.createElement("div");
+    count.innerText = number;
 
-        heart.innerHTML = "💖";
-        heart.className = "heart";
+    const timer = setInterval(() => {
 
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        number--;
+
+        if(number > 0){
+            count.innerText = number;
+        }
+
+        else if(number === 0){
+            count.innerText = "🎉";
+        }
+
+        else{
+
+            clearInterval(timer);
+
+            countdown.style.display = "none";
+
+            letter.classList.add("show");
+            gallery.classList.add("show");
+
+            createHearts();
+
+        }
+
+    },1000);
+
+});
+
+function createHearts(){
+
+    for(let i=0;i<30;i++){
+
+        const heart=document.createElement("div");
+
+        heart.innerHTML="💖";
+        heart.className="heart";
+
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.animationDuration=(3+Math.random()*3)+"s";
 
         document.body.appendChild(heart);
 
-        setTimeout(() => {
+        setTimeout(()=>{
             heart.remove();
-        }, 6000);
+        },6000);
+
     }
 
-});
+}
