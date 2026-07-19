@@ -94,19 +94,18 @@ function createFireworks() {
     });
 
 });
+
 birthdayVideo.addEventListener("ended", () => {
 
     cakeBtn.style.display = "block";
 
 });
 
-function showCake() {
+cakeBtn.addEventListener("click", () => {
 
-    cakeBtn.style.display = "block";
+    cakeBtn.style.display = "none";
 
-    alert("Video Ended!");
-
-}
+    cakeSection.style.display = "block";
 
     cakeSection.scrollIntoView({
         behavior: "smooth"
