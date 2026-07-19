@@ -98,3 +98,35 @@ button:hover{
 .gallery img:hover{
     transform:scale(1.08);
 }
+.letter{
+    display:none;
+    margin-top:30px;
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,.1);
+}
+
+.letter.show{
+    display:block;
+}
+
+.gallery{
+    display:none;
+}
+
+.gallery.show{
+    display:flex;
+}
+.heart{
+    position:fixed;
+    top:-30px;
+    font-size:25px;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
