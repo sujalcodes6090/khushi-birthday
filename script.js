@@ -1,6 +1,9 @@
 const btn = document.getElementById("startBtn");
 const gallery = document.querySelector(".gallery");
 const letter = document.getElementById("letter");
+const nextBtn = document.getElementById("nextBtn");
+const videoSection = document.getElementById("videoSection");
+const birthdayVideo = document.getElementById("birthdayVideo");
 
 const countdown = document.getElementById("countdown");
 const count = document.getElementById("count");
@@ -34,6 +37,8 @@ btn.addEventListener("click", () => {
 
             letter.classList.add("show");
             gallery.classList.add("show");
+
+            nextBtn.style.display = "inline-block";
 
             createHearts();
             createFireworks();
@@ -74,4 +79,16 @@ function createFireworks() {
         origin: { y: 0.7 }
     });
 
-}
+}nextBtn.addEventListener("click", () => {
+
+    nextBtn.style.display = "none";
+
+    videoSection.style.display = "block";
+
+    birthdayVideo.play();
+
+    videoSection.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
