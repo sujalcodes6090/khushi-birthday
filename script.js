@@ -4,6 +4,8 @@ const letter = document.getElementById("letter");
 const nextBtn = document.getElementById("nextBtn");
 const videoSection = document.getElementById("videoSection");
 const birthdayVideo = document.getElementById("birthdayVideo");
+const cakeBtn = document.getElementById("cakeBtn");
+const cakeSection = document.getElementById("cakeSection");
 
 const countdown = document.getElementById("countdown");
 const count = document.getElementById("count");
@@ -89,6 +91,28 @@ function createFireworks() {
 
     videoSection.scrollIntoView({
         behavior: "smooth"
+    });
+
+});
+birthdayVideo.addEventListener("ended", () => {
+
+    cakeBtn.style.display = "block";
+
+});
+
+cakeBtn.addEventListener("click", () => {
+
+    cakeBtn.style.display = "none";
+
+    cakeSection.style.display = "block";
+
+    cakeSection.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    confetti({
+        particleCount: 100,
+        spread: 80
     });
 
 });
