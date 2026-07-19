@@ -6,13 +6,14 @@
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     background:linear-gradient(135deg,#0b1020,#1d2671,#2d1b69);
-    overflow:hidden;
     color:white;
+    padding:30px 15px;
+    overflow-y:auto;
 }
 
 .container{
