@@ -6,6 +6,9 @@ const videoSection = document.getElementById("videoSection");
 const birthdayVideo = document.getElementById("birthdayVideo");
 const cakeBtn = document.getElementById("cakeBtn");
 const cakeSection = document.getElementById("cakeSection");
+const messageBtn = document.getElementById("messageBtn");
+const messageSection = document.getElementById("messageSection");
+const typewriter = document.getElementById("typewriter");
 
 const countdown = document.getElementById("countdown");
 const count = document.getElementById("count");
@@ -107,6 +110,8 @@ cakeBtn.addEventListener("click", () => {
 
     cakeSection.style.display = "block";
 
+    messageBtn.style.display = "inline-block";
+
     cakeSection.scrollIntoView({
         behavior: "smooth"
     });
@@ -115,5 +120,50 @@ cakeBtn.addEventListener("click", () => {
         particleCount: 100,
         spread: 80
     });
+
+});
+const message = `Happy Birthday Khushi ❤️
+
+I don't know how to express everything in words,
+but I just want you to know that you are a truly special person.
+
+May your smile always stay the same,
+your dreams come true,
+and your life be filled with happiness.
+
+Once again...
+Happy Birthday! 🎂❤️`;
+
+messageBtn.addEventListener("click", () => {
+
+    messageBtn.style.display = "none";
+
+    messageSection.style.display = "block";
+
+    messageSection.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    let i = 0;
+    typewriter.innerHTML = "";
+
+    function type() {
+
+        if (i < message.length) {
+
+            if (message.charAt(i) === "\n") {
+                typewriter.innerHTML += "<br>";
+            } else {
+                typewriter.innerHTML += message.charAt(i);
+            }
+
+            i++;
+
+            setTimeout(type, 45);
+        }
+
+    }
+
+    type();
 
 });

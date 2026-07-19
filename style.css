@@ -185,3 +185,21 @@ button:hover{
         transform:translateY(-15px);
     }
 }
+#messageSection{
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+}
+
+#typewriter{
+    font-size:22px;
+    line-height:1.8;
+    color:#fff;
+    white-space:pre-wrap;
+}
+
+#messageBtn{
+    margin-top:30px;
+}
